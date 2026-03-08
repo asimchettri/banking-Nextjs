@@ -74,7 +74,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                       
                         <p
                           className={cn("text-16 font-semibold text-black-2", {
-                            "!text-white": isActive,
+                            "text-white": isActive,
                           })}
                         >
                           {item.label}

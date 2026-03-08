@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 
 declare type SearchParamProps = {
-  params: { [key: string]: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ [key: string]: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 // ========================================
@@ -32,7 +32,7 @@ declare type User = {
   dwollaCustomerUrl: string;
   dwollaCustomerId: string;
   firstName: string;
-  name:string;
+  name: string;
   lastName: string;
   address1: string;
   city: string;
@@ -75,7 +75,6 @@ declare type Transaction = {
   category: string;
   date: string;
   image: string;
-  type: string;
   $createdAt: string;
   channel: string;
   senderBankId: string;
@@ -179,15 +178,6 @@ declare interface PlaidLinkProps {
   dwollaCustomerId?: string;
 }
 
-// declare type User = sdk.Models.Document & {
-//   accountId: string;
-//   email: string;
-//   name: string;
-//   items: string[];
-//   accessToken: string;
-//   image: string;
-// };
-
 declare interface AuthFormProps {
   type: "sign-in" | "sign-up";
 }
@@ -211,7 +201,7 @@ declare interface TotalBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
-  type?:'mobile' | 'desktop';
+  type?: 'mobile' | 'desktop';
 }
 
 declare interface RightSidebarProps {
@@ -274,10 +264,10 @@ declare interface getTransactionsProps {
 }
 
 declare interface CreateFundingSourceOptions {
-  customerId: string; // Dwolla Customer ID
-  fundingSourceName: string; // Dwolla Funding Source Name
-  plaidToken: string; // Plaid Account Processor Token
-  _links: object; // Dwolla On Demand Authorization Link
+  customerId: string;
+  fundingSourceName: string;
+  plaidToken: string;
+  _links: object;
 }
 
 declare interface CreateTransactionProps {
